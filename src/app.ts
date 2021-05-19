@@ -1,58 +1,18 @@
-const game = {
-  team1: 'Bayern Munich',
-  team2: 'Borrussia Dortmund',
-  players: [
-      [
-          'Neuer',
-          'Pavard',
-          'Martinez',
-          'Alaba',
-          'Davies',
-          'Kimmich',
-          'Goretzka',
-          'Coman',
-          'Muller',
-          'Gnarby',
-          'Lewandowski',
-      ],
-      [
-          'Burki',
-          'Schulz',
-          'Hummels',
-          'Akanji',
-          'Hakimi',
-          'Weigl',
-          'Witsel',
-          'Hazard',
-          'Brandt',
-          'Sancho',
-          'Gotze',
-      ],
-  ],
-  score: '4:0',
-  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
-  date: 'Nov 9th, 2037',
-  odds: {
-      team1: 1.33,
-      x: 3.25,
-      team2: 6.5,
-  },
-};
-let jugadores1: String[] = game.players[0];
-let jugadores2: String[]=game.players[1];
+let factura: number = -1;
+var tip: number=factura*(factura>49 && factura<301?0.15:0.20);
+console.log(tip);
 //1
-var gk: String;
-gk = game.players[0][0];
-const fieldplayers: String[]=[];
-for (var i = 1;i<game.players[1].length; i++) {
-    fieldplayers.push(game.players[0][i]);
-}
+factura = 275;
+tip=factura*(factura>49 && factura<301?0.15:0.20);
+console.log(`La factura fue ${factura}, la propina fue ${tip} y el valor total ${factura + tip} `);
 //2
-let allplayers: String[]=game.players[0].concat(game.players[1]);
+const calcTip = function (factura: number) {
+    return factura * (factura >= 50 && factura <= 300 ? 0.15 : 0.2);
+}
+tip = calcTip(100);
+console.log(tip);
 //3
-let players1Final: String[]=game.players[0].concat('Thiago','Perisic','Coutinho');
+const facturas: number[] = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 //4
-let equipo1: number=game.odds.team1;
-let empate: number=game.odds.x;
-let equipo2: number=game.odds.team2;
-//5
+const propinas: number[] = [];
+const totales: number[] = [];
